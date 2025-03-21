@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <!-- 난수 표시 텍스트뷰 -->
+    <TextView
+        android:id="@+id/textViewRandomNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="난수: 0"
+        android:textSize="24sp"/>
+
+    <!-- 난수 생성 버튼 -->
+    <Button
+        android:id="@+id/buttonGenerate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="랜덤 생성"
+        android:onClick="generateRandomNumber"/>
+</LinearLayout>
