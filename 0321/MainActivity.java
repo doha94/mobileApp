@@ -1,4 +1,4 @@
-package com.example.twobutton;
+package com.example.colortest;
 
 import android.os.Bundle;
 
