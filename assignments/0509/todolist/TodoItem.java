@@ -1,22 +1,32 @@
 package com.example.assignment_todolist;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 public class TodoItem {
     private long id;
     private String task;
-    private boolean completed;
+    private boolean isCompleted;
+    private String dateTime; // 추가
 
+    public TodoItem(String task, boolean isCompleted) {
+        this.task = task;
+        this.isCompleted = isCompleted;
+        this.dateTime = getCurrentDateTime(); // 새로 추가
+    }
     public TodoItem() {
+        // 빈 생성자 - DatabaseHelper에서 객체 생성 시 사용됨
+    }
+    public String getDateTime() {
+        return dateTime;
     }
 
-    public TodoItem(String task, boolean completed) {
-        this.task = task;
-        this.completed = completed;
+    public void setDateTime(String dateTime) {
+        this.dateTime = dateTime;
     }
 
-    public TodoItem(long id, String task, boolean completed) {
-        this.id = id;
-        this.task = task;
-        this.completed = completed;
+    private String getCurrentDateTime() {
+        return new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault()).format(new Date());
     }
 
     public long getId() {
@@ -36,10 +46,10 @@ public class TodoItem {
     }
 
     public boolean isCompleted() {
-        return completed;
+        return isCompleted;
     }
 
     public void setCompleted(boolean completed) {
-        this.completed = completed;
+        this.isCompleted = completed;
     }
 }
