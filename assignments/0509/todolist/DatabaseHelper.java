@@ -11,13 +11,13 @@ import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "todolist.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     private static final String TABLE_TODO = "todos";
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_TASK = "task";
     private static final String COLUMN_COMPLETED = "completed";
-
+    private static final String COLUMN_DATETIME = "datetime";
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -25,9 +25,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_TODO_TABLE = "CREATE TABLE " + TABLE_TODO + "("
-                + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + COLUMN_TASK + " TEXT,"
-                + COLUMN_COMPLETED + " INTEGER" + ")";
+                + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + COLUMN_TASK + " TEXT, "
+                + COLUMN_COMPLETED + " INTEGER, "
+                + COLUMN_DATETIME + " TEXT"
+                + ")";
         db.execSQL(CREATE_TODO_TABLE);
     }
 
@@ -43,6 +45,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(COLUMN_TASK, todo.getTask());
         values.put(COLUMN_COMPLETED, todo.isCompleted() ? 1 : 0);
+        values.put(COLUMN_DATETIME, todo.getDateTime()); // 날짜 저장
         long id = db.insert(TABLE_TODO, null, values);
         db.close();
         return id;
@@ -82,6 +85,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 todo.setId(cursor.getLong(cursor.getColumnIndex(COLUMN_ID)));
                 todo.setTask(cursor.getString(cursor.getColumnIndex(COLUMN_TASK)));
                 todo.setCompleted(cursor.getInt(cursor.getColumnIndex(COLUMN_COMPLETED)) == 1);
+                todo.setDateTime(cursor.getString(cursor.getColumnIndex(COLUMN_DATETIME))); // 날짜 불러오기
                 todoList.add(todo);
             } while (cursor.moveToNext());
         }
