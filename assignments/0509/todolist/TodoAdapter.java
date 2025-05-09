@@ -48,13 +48,15 @@ public class TodoAdapter extends BaseAdapter {
             holder.taskText = convertView.findViewById(R.id.task_text);
             holder.completeCheckBox = convertView.findViewById(R.id.complete_checkbox);
             holder.deleteButton = convertView.findViewById(R.id.delete_button);
+            holder.dateTimeText = convertView.findViewById(R.id.datetime);
+
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
         final TodoItem currentItem = todoItems.get(position);
-
+        holder.dateTimeText.setText(currentItem.getDateTime());
         holder.taskText.setText(currentItem.getTask());
 
         // 완료 여부에 따라 텍스트 스타일 변경
@@ -92,6 +94,7 @@ public class TodoAdapter extends BaseAdapter {
     // 뷰홀더 클래스
     static class ViewHolder {
         TextView taskText;
+        TextView dateTimeText;
         CheckBox completeCheckBox;
         ImageButton deleteButton;
     }
