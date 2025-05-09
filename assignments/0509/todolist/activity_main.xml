@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/header_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="할 일 목록"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="@color/colorPrimary"
+        android:textColor="#FFFFFF" />
+
+    <ListView
+        android:id="@+id/todo_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_text"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"
+        android:padding="8dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:contentDescription="할 일 추가"
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="@color/colorAccent" />
+
+</RelativeLayout>
