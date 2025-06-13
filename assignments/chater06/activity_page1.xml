@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/chater06_cc_image_page2" 
+       // 축구 페이지
+        android:scaleType="centerCrop"
+        android:alpha="0.8"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#40000000"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:gravity="center">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로렘입섬로렘입섬로렘입섬로렘입섬로렘입섬로렘입섬로렘입섬로렘입섬로렘입섬로렘입섬로렘입섬로렘입섬"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#FFffff"
+        android:layout_marginBottom="20dp"/>
+    </LinearLayout>
+
+</RelativeLayout>
