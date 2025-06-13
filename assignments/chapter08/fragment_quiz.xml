@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#4CAF50"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tv_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="질문이 여기에 표시됩니다"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="#388E3C"
+        android:padding="20dp"
+        android:layout_marginBottom="32dp" />
+
+    <RadioGroup
+        android:id="@+id/rg_answers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp">
+
+        <RadioButton
+            android:id="@+id/rb_option1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="옵션 1"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:background="#FFFFFF"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <RadioButton
+            android:id="@+id/rb_option2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="옵션 2"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:background="#FFFFFF"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <RadioButton
+            android:id="@+id/rb_option3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="옵션 3"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:background="#FFFFFF"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <RadioButton
+            android:id="@+id/rb_option4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="옵션 4"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:background="#FFFFFF"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="다음 문제"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:background="#3F51B5"
+        android:padding="16dp" />
+
+</LinearLayout>
